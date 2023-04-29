@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarrinhoService } from '../carrinho.service';
+import { IProdutoCarrinho } from '../produtos';
 
 @Component({
   selector: 'app-carrinho',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent {
+  itensCarrinho: IProdutoCarrinho[] = [];
+
+  constructor(
+    public carrinhoService: CarrinhoService
+  ) {}
 
 }
