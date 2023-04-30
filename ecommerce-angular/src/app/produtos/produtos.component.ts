@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IProduto, produtos } from '../produtos';
+import { Component, OnInit } from '@angular/core';
+import { IProduto } from '../produtos';
 import { ProdutosService } from '../produtos.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ProdutosService } from '../produtos.service';
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css']
 })
-export class ProdutosComponent {
+export class ProdutosComponent implements OnInit {
   produtos: IProduto[] | undefined;
 
   constructor(

@@ -14,4 +14,13 @@ export class CarrinhoComponent {
     public carrinhoService: CarrinhoService
   ) {}
 
+  ngOnInit(): void {
+    this.itensCarrinho = this.carrinhoService.obtemCarrinho();
+  }
+
+  removerProdutoCarrinho(produtoId: number) {
+    this.itensCarrinho = this.itensCarrinho.filter(item => item.id !== produtoId);
+    this.carrinhoService.removerProdutoCarrinho(produtoId);
+  }
+
 }
