@@ -9,6 +9,7 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { ReactiveFormsModule } from '@angular/forms';
+import { BarraPesquisaComponent } from './barra-pesquisa/barra-pesquisa.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     NaoEncontradoComponent,
+    BarraPesquisaComponent,
   ],
   imports: [
     BrowserModule,
