@@ -43,6 +43,10 @@
     color: #fff;
 }
 
+.main-header__menu .redes {
+    cursor: pointer;
+}
+
 .container-menu {
     display: flex;
     flex-direction: column;
