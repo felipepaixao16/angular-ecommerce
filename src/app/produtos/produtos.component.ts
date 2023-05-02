@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IProduto } from '../produtos';
 import { ProdutosService } from '../produtos.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -10,17 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProdutosComponent implements OnInit {
   produtos: IProduto[] | undefined;
-
+  
   constructor(
     private produtosService: ProdutosService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const produtos = this.produtosService.getAll();
     this.route.queryParamMap.subscribe(params => {
-      const descricao = params.get("descricao")?.toLowerCase();
-
+      const descricao = params.get("descricao")?.toLowerCase();    
 
       if (descricao) {
         this.produtos = produtos.filter(produto => produto.descricao.toLowerCase().includes(descricao));
@@ -28,6 +27,6 @@ export class ProdutosComponent implements OnInit {
       }
 
       this.produtos = produtos;
-    });
+    });  
   }
 }
